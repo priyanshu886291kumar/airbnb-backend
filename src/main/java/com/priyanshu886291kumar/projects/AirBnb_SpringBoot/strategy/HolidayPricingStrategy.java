@@ -10,8 +10,8 @@ public class HolidayPricingStrategy implements PricingStrategy{
     private final PricingStrategy wrapped;
     @Override
     public BigDecimal calculatePrice(Inventory inventory) {
-        BigDecimal price = inventory.getPrice();
-        boolean isTodayHoliday = true; // Call an API or check with local data
+        BigDecimal price = wrapped.calculatePrice(inventory);
+        boolean isTodayHoliday = false; // Call an API or check with local data
         if(isTodayHoliday){
             price = price.multiply(BigDecimal.valueOf(1.25));
         }
