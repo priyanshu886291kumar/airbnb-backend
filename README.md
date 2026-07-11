@@ -51,6 +51,11 @@ If you are on Windows, run:
 
 > Tip: Use a Java 21 JDK to avoid compatibility issues.
 
+
+> Note: The README is updated for documentation-only improvements.
+
+> Note: The README is updated for documentation-only improvements.
+
 ## System Architecture
 
 ### Layered Architecture
