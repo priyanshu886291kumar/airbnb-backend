@@ -49,6 +49,8 @@ If you are on Windows, run:
 ./mvnw.cmd spring-boot:run
 ```
 
+> Tip: Use a Java 21 JDK to avoid compatibility issues.
+
 ## System Architecture
 
 ### Layered Architecture
