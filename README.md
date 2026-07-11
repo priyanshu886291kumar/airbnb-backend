@@ -49,6 +49,8 @@ If you are on Windows, run:
 ./mvnw.cmd spring-boot:run
 ```
 
+> Recommended: set `JAVA_HOME` to your Java 21 SDK installation.
+
 > Tip: Use a Java 21 JDK to avoid compatibility issues.
 
 
