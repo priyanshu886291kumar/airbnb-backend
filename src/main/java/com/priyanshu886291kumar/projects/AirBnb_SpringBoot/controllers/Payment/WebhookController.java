@@ -23,7 +23,7 @@ public class WebhookController {
             paymentService.capturePayment(event);
             return ResponseEntity.noContent().build();
         }catch (SignatureVerificationException e){
-            throw new RuntimeException(e);
+            return ResponseEntity.badRequest().build();
         }
     }
 }
