@@ -8,6 +8,7 @@ import com.priyanshu886291kumar.projects.AirBnb_SpringBoot.security.AuthService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +27,11 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/signup")
-    public ResponseEntity<UserDTO>signup(@RequestBody SignUpRequestDTO signUpRequestDTO){
+    public ResponseEntity<UserDTO>signup(@Valid @RequestBody SignUpRequestDTO signUpRequestDTO){
         return new ResponseEntity<>(authService.signup(signUpRequestDTO), HttpStatus.CREATED);
     }
     @PostMapping("/login")
-    public ResponseEntity<LoginResponseDTO>login(@RequestBody LoginDTO loginDTO, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+    public ResponseEntity<LoginResponseDTO>login(@Valid @RequestBody LoginDTO loginDTO, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
         String[]tokens = authService.login(loginDTO);
         Cookie cookie = new Cookie("refreshToken", tokens[1]);
         cookie.setHttpOnly(true);
