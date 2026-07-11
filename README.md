@@ -33,6 +33,22 @@ The platform addresses the need for a scalable, secure, and reliable accommodati
 - **Dependency Injection**: Lombok
 - **Development Tools**: Spring DevTools
 
+## Getting Started
+
+To build and run the application locally, use the Maven wrapper from the repository root:
+
+```bash
+./mvnw clean package
+./mvnw spring-boot:run
+```
+
+If you are on Windows, run:
+
+```powershell
+./mvnw.cmd clean package
+./mvnw.cmd spring-boot:run
+```
+
 ## System Architecture
 
 ### Layered Architecture
